@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Signup</title>
+  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="icon" href="../public/images/logo.png">
+  <style>
+    input:-webkit-autofill {
+      -webkit-box-shadow:none !important
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="logo">
+        <img src="../public/images/logo.png" alt="">
+    </div><br>
+    <div class="text-center mt-4 name">
+        Let's Connect...
+    </div>
+    <form class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="userName" id="userName" placeholder="Username" autocomplete="off "!important>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="email" name="email" id="email" placeholder="Email" autocomplete="off" autocomplete="off "!important>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" name="password" id="pwd" placeholder="Password">
+        </div>
+        <div class="form-field d-flex align-items-center">
+          <input type="submit" id="signup" value="Signup" onclick="UserSignup(event)">
+      </div>
+      <div class="text-center fs-6">
+        <a href="/forgotPassword" style="color:#A060FF;">Forget password?</a> or <a href="/login" style="color:#A060FF;">login</a>
+    </div>
+    </form>
+  </div>
+</body>
+<script src="../public/js/main.js"></script>
+</html>

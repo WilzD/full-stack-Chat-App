@@ -1,0 +1,21 @@
+exports.landingPage=async(req,res)=>{
+    res.sendFile('signup.html',{root:'views'})
+}
+exports.loginPage=async(req,res)=>{
+    res.sendFile('login.html',{root:'views'})
+}
+exports.forgotPassword=async(req,res)=>{
+    res.sendFile('forgotPassword.html',{root:'views'})
+}
+exports.firstMsg=async(req,res)=>{
+    res.sendFile('firstmsg.html',{root:'views'})
+}
+exports.secondMsg=async(req,res)=>{
+    res.sendFile('secondmsg.html',{root:'views'})
+}
+exports.thirdMsg=async(req,res)=>{
+    res.sendFile('thirdmsg.html',{root:'views'})
+}
+exports.ChatPage=async(req,res)=>{
+    res.sendFile('chat.html',{root:'views'})
+}
