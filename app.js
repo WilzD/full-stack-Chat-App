@@ -5,7 +5,7 @@ const app=express()
 const cors=require('cors')
 app.use(cors())
 
-require('dotenv').config()
+require('dotenv').config()   
 
 const sequelizeDB = require('./path/database')
 
