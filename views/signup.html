@@ -23,15 +23,18 @@
     <form class="p-3 mt-3">
         <div class="form-field d-flex align-items-center">
             <span class="far fa-user"></span>
-            <input type="text" name="userName" id="userName" placeholder="Username" autocomplete="off "!important>
+            <input type="text" name="userName" id="userName" placeholder="Username" required>
+            <p id="usernameError" style="color: red; font-size: 15px;"></p>
         </div>
         <div class="form-field d-flex align-items-center">
             <span class="fas fa-key"></span>
-            <input type="email" name="email" id="email" placeholder="Email" autocomplete="off" autocomplete="off "!important>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <p id="emailError" style="color: red; font-size: 15px;"></p>
         </div>
         <div class="form-field d-flex align-items-center">
             <span class="fas fa-key"></span>
-            <input type="password" name="password" id="pwd" placeholder="Password">
+            <input type="password" name="password" id="pwd" placeholder="Password" required>
+            <p id="passwordError" style="color: red; font-size: 15px;"></p>
         </div>
         <div class="form-field d-flex align-items-center">
           <input type="submit" id="signup" value="Signup" onclick="UserSignup(event)">
@@ -43,4 +46,5 @@
   </div>
 </body>
 <script src="../public/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
 </html>
