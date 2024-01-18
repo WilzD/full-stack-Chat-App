@@ -19,10 +19,12 @@
         <div class="form-field d-flex align-items-center">
             <span class="far fa-user"></span>
             <input type="email" name="email" id="email" placeholder="Email">
+            <p id="emailError" style="color: red; font-size: 15px;"></p>
         </div>
         <div class="form-field d-flex align-items-center">
             <span class="fas fa-key"></span>
             <input type="password" name="password" id="pwd" placeholder="Password">
+            <p id="passwordError" style="color: red; font-size: 15px;"></p>
         </div>
         <div class="form-field d-flex align-items-center">
           <input type="submit" id="login" value="Login" onclick="UserLogin(event)">
@@ -34,4 +36,5 @@
   </div>
 </body>
 <script src="../public/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
 </html>

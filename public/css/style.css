@@ -138,6 +138,9 @@ body {
 
 
 }
+.red-color{
+    color:red
+ }
 #zenChat{
     font-family: 'Poppins', sans-serif;
      color:chartreuse;
