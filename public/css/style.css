@@ -26,7 +26,7 @@ body {
     padding: 40px 30px 30px 30px;
     background-color:#fff;
     border-radius: 15px;
-        box-shadow: 13px 13px 20px #3eaead, -13px -13px 20px #A060FF;
+    box-shadow: 13px 13px 20px #3eaead, -13px -13px 20px #A060FF;
         /* box-shadow: 13px 13px 20px #A060FF, -13px -13px 20px #A060FF; */
 }
 
@@ -145,6 +145,25 @@ body {
     font-family: 'Poppins', sans-serif;
      color:chartreuse;
 }
+.chat-div{
+    width: 100%;
+    overflow: hidden;
+}
+    /* Style for the left div */
+    .left-div {
+        width: 50%;
+        float: left; /* Float left to position on the left */
+        background-color: #f2f2f2; /* Example background color */
+        padding: 20px; /* Example padding */
+      }
+  
+      /* Style for the right div */
+      .right-div {
+        width: 50%;
+        float: right; /* Float right to position on the right */
+        background-color: #e6e6e6; /* Example background color */
+        padding: 20px; /* Example padding */
+      }
 
 @media(max-width: 600px) {
     .wrapper {
