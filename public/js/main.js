@@ -5,7 +5,9 @@ const password=document.getElementById('pwd')
 const usernameError=document.getElementById('usernameError')
 const emailError=document.getElementById('emailError')
 const passwordError=document.getElementById('passwordError')
-function UserLogin(e){
+
+const token=localStorage.getItem('token')
+async function UserLogin(e){
     e.preventDefault()
     try {
         if(email.value===''){
@@ -21,14 +23,25 @@ function UserLogin(e){
             },1000)
         }
         else{
-            window.location.href='/chat'
+            let obj={
+                email:email.value,
+                password:password.value,
+            }
+             const data=await axios.post('/userLogin',obj)
+             localStorage.setItem('token',data.data.token)
+             window.location.href='/chat'
         }
         
     } catch (error) {
-        console.log(error)
+        passwordError.innerHTML=error.response.data.msg
+        setTimeout(()=>{
+            passwordError.innerHTML=''
+        },1000)
+        console.log(error.response.data.msg)
     }
 
 }
+
 async function UserSignup(e){
     e.preventDefault() 
     try {
