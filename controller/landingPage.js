@@ -16,6 +16,12 @@ exports.secondMsg=async(req,res)=>{
 exports.thirdMsg=async(req,res)=>{
     res.sendFile('thirdmsg.html',{root:'views'})
 }
+exports.allGroupPage=async(req,res)=>{
+    res.sendFile('allGroups.html',{root:'views'})
+}
 exports.ChatPage=async(req,res)=>{
     res.sendFile('chat.html',{root:'views'})
+}
+exports.groupInfoPage=async(req,res)=>{
+    res.sendFile('groupinfo.html',{root:'views'})
 }

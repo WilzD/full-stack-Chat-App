@@ -24,6 +24,11 @@ const User=sequelize.define('user',{
         type:Sequelize.STRING,
         allowNull:false,
     },
+    active:{
+        type:Sequelize.STRING,
+        allowNull:false,
+        defaultValue:false
+    }
 })
 module.exports=User
 

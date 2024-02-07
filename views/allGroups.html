@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/391827d54c.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/565050ff0d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../public/css/chat.css">
+  <link rel="stylesheet" href="../public/css/style.css">
+  <title>Zenchat</title>
+</head>
+
+<body>
+  <div class="background-green"></div>
+
+
+  <div class="main-container">
+    <div class="left-container">
+
+      <!--header -->
+      <div class="header">
+        <div class="user-img">
+          <img class="dp" src="../public/images/logo.png" alt="">
+        </div>
+        <div class="nav-icons">
+          <li onclick=""><i class="fa-solid fa-users"></i></li>
+          <li><i class="fa-solid fa-message">
+            </i></li>
+          <li onclick="Userlogout()"><i class="fa fa-power-off" aria-hidden="true"></i>
+          </li>
+        </div>
+      </div><br>
+      <h3>Create Group</h3>
+      <div class="msg-box-input">
+        <span style="color:#00E4E3;">Your Group Name</span><br>
+        <input type="text" placeholder="e.g; the Zenz's" id="groupname-input-field">
+        <a href="" id="add-group-button"><i class="fa fa-plus-square"></i></a><br>
+        <span id="GroupNameError" style="color:red;"></span>
+      </div><br><br>
+
+      <span id="notAmemberError" style="color: red;"></span>
+      <!-- members list -->
+      <div class="chat-list" style="background-color: white;" id="group-list">
+        <h3>Existing Groups</h3>
+
+        <!-- the groups will be added here -->
+      </div>
+
+
+    </div>
+
+
+</body>
+
+<script src="../public/js/group.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+
+</html>

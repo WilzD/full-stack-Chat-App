@@ -53,7 +53,7 @@ body {
     color: #555;
 }
 
-.wrapper .form-field input {
+.createGroupForm .form-field input {
     width: 100%;
     display: block;
     border: none;
