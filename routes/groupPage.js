@@ -12,6 +12,6 @@ router.get('/groupInfo/:GroupId',Authentication.Authentication,groupController.g
 router.post('/add-new-user-to-group',Authentication.Authentication,groupController.addNewUserTogroup)
 router.post('/join-group',Authentication.Authentication,groupController.joinGroup)
 router.delete('/delete-member/:id',Authentication.Authentication,groupController.deleteMemberFromgroup)
-
+router.put('/make-admin',Authentication.Authentication,groupController.makeAdmin)
 
 module.exports=router

@@ -20,6 +20,7 @@ async function ShowGroupInfo() {
         const groupInfo = await axios.get(`/groupInfo/${GroupId}`, { headers: { 'Authorization': token } })
         const memberList = groupInfo.data.Allmembers
         memberList.forEach(element => {
+            console.log(element)
             if (element.isadmin == 1) {
                 memberListContainer.innerHTML += `
                 <div class="member-left-div" style="border-bottom:1px groove #00E4E3;">
@@ -40,7 +41,7 @@ async function ShowGroupInfo() {
                 
                 <div class="member-right-div">
                     <a style="margin-left:15px; color:#A060FF" onclick="deleteMember(${element.id})"><i class="fa fa-trash" ></i></a>
-                    <a style="margin-left:15px; color:#A060FF"><i class="fa fa-id-badge" aria-hidden="true"></i></a>
+                    <a style="margin-left:15px; color:#A060FF" onclick="makeAdmin(${element.id},${element.userId})"><i class="fa fa-id-badge" aria-hidden="true"></i></a>
                 </div>
                 
                 <div class="member-list-clearfix"></div><br>
@@ -89,6 +90,32 @@ async function deleteMember(id) {
 }
 
 
+async function makeAdmin(id,userid){
+    try {
+       let obj={
+        GroupId:id,
+        UserId:userid 
+        }
+        const makeadmin=axios.put(`/make-admin`,obj,{headers:{  'Authorization': token }})
+        AddUserError.style.color = 'green'
+        AddUserError.innerHTML = 'admin added succesfully successfully'
+        setTimeout(() => {
+            AddUserError.innerHTML = ''
+            window.location.href = '/groupInfo'
+
+        }, 2000)
+    } catch (error) {
+        console.log(error.response.data.msg)
+        AddUserError.style.color = 'red'
+        AddUserError.innerHTML = error.response.data.msg
+        setTimeout(() => {
+            AddUserError.innerHTML = ''
+        }, 2000)
+        
+    }
+
+
+}
 {/* <a style="margin-left:15px; color:#A060FF"  onclick="AddMember(${element.id})"><i class="fa fa-plus"></i></a> */ }
 
 

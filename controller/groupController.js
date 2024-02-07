@@ -118,10 +118,23 @@ exports.deleteMemberFromgroup = async (req, res) => {
     try {
         const { id } = req.params
         const delUser = await UserGroup.destroy({ where: { id: id } })
-        return res.status(201).json({msg:'member deleted succesfully'})
+        return res.status(201).json({ msg: 'member deleted succesfully' })
     } catch (error) {
-       console.log(error)
-       return res.status(403).json({msg:'unable to remove member'})
+        console.log(error)
+        return res.status(403).json({ msg: 'unable to remove member' })
+    }
+}
+
+exports.makeAdmin = async (req, res) => {
+    try {
+        const { GroupId, UserId } = req.body
+        const findingUser = await UserGroup.findOne({ where: { id: GroupId, userId: UserId } })
+        const updatingAdmin = await findingUser.update({ isadmin: true })
+        updatingAdmin.save()
+        return res.status(200).json({ msg: 'admin added succesfully' })
+    } catch (error) {
+        console.log(error)
+        return res.status(403).json({ msg: "unable to make admin" })
     }
 
 }
